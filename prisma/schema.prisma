@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Empenho {
+  id              Int     @id @default(autoincrement())
+  ano             String
+  mes             String
+  unidade_gestora String
+  data            DateTime
+  especie         String
+  empenho         String
+  tipo_empenho    String
+  elemento_despesa String
+  subtitulo       String
+  funcao          String
+  subfuncao       String
+  programa        String
+  fonte_recurso   String
+  grupo_despesa   String
+  documento_favorecido String
+  nome_favorecido String
+  valor           Float
+}
