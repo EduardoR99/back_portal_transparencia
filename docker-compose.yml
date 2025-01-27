@@ -4,9 +4,9 @@ services:
   db:
     image: postgres:13
     environment:
-      POSTGRES_USER: postgres_opwr_user
-      POSTGRES_PASSWORD: M7cGGNSTRqkm5XZhwSLhA6hqKg2HPB5I
-      POSTGRES_DB: postgres_opwr
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: mydatabase
     ports:
       - "5432:5432"
     volumes:
@@ -19,11 +19,11 @@ services:
     depends_on:
       - db
     environment:
-      DATABASE_URL: "postgresql://postgres_opwr_user:M7cGGNSTRqkm5XZhwSLhA6hqKg2HPB5I@dpg-cubpqul6l47c73a3nfh0-a:5432/postgres_opwr"
+      DATABASE_URL: "postgresql://postgres:123456@db:5432/mydatabase"
     volumes:
       - .:/app
     command: >
-      sh -c "npx prisma migrate deploy && npm start"
+      sh -c "npx prisma migrate dev && npm start"
 
 volumes:
   postgres_data:

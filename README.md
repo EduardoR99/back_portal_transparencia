@@ -25,11 +25,27 @@
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Start with on CMD
+
+```bash
+$ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 
 ## Project setup
 
 ```bash
 $ npm install
+```
+
+## create a .env file on your root
+
+```bash
+$ DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
+```
+## Run prisma migrations
+
+```bash
+$ npx prisma migrate
 ```
 
 ## Compile and run the project
